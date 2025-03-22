@@ -18,16 +18,4 @@
       <class name="com.qa.opencart.tests.LoginPageTests"/>
     </classes>
   </test> <!-- Test -->
-  <test name="Open Cart Home Page Test_edge">
-  <parameter name="browser" value="chromium"></parameter>
-    <classes>
-      <class name="com.qa.opencart.tests.HomePageTests"/>
-    </classes>
-  </test> <!-- Test -->
-  <test name="Open Cart Login Page Test_chromium">
-  <parameter name="browser" value="edge"></parameter>
-    <classes>
-      <class name="com.qa.opencart.tests.LoginPageTests"/>
-    </classes>
-  </test> <!-- Test -->
 </suite> <!-- Suite -->
