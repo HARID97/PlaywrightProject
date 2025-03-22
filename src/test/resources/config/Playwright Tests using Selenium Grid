@@ -1,0 +1,7 @@
+Create docker-compose.yaml file and save it in documents.
+Download Docker for windows and install
+Go to Terminal -> navigate to the docker-compose.yaml folder
+run the command: docker-compose up -d -> to set up the selenium grid based on the properties given in the yaml file.
+docker ps -a -> to see all the available containers
+go to the port connected to see the nodes available -> localhost:4444
+Go to the Project path in the terminal and use the following command: set SELENIUM_REMOTE_URL=http://localhost:4444/wd/hub&&mvn test -PRegression1
