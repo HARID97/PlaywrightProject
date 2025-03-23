@@ -74,7 +74,9 @@ public class ExtentReportListener implements ITestListener{
 		// TODO Auto-generated method stub
 		System.out.println(result.getMethod().getMethodName()+" passed!");
 		test.get().pass("Test Passed");
-		test.get().pass(result.getThrowable(),MediaEntityBuilder.createScreenCaptureFromPath(takeScreenshot()).build());
+		//test.get().pass(result.getThrowable(),MediaEntityBuilder.createScreenCaptureFromPath(takeScreenshot()).build());
+		//to attach screenshot in extent reports in jenkins
+		test.get().pass(result.getThrowable(),MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot(),result.getMethod().getMethodName()).build());
 		test.get().getModel().setEndTime(getTime(result.getEndMillis()));
 	}
 
@@ -82,7 +84,8 @@ public class ExtentReportListener implements ITestListener{
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
 		System.out.println(result.getMethod().getMethodName()+" failed!");
-		test.get().fail(result.getThrowable(),MediaEntityBuilder.createScreenCaptureFromPath(takeScreenshot()).build());
+		//test.get().fail(result.getThrowable(),MediaEntityBuilder.createScreenCaptureFromPath(takeScreenshot()).build());
+		test.get().fail(result.getThrowable(),MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot(),result.getMethod().getMethodName()).build());
 		test.get().getModel().setEndTime(getTime(result.getEndMillis()));
 	}
 
@@ -90,7 +93,8 @@ public class ExtentReportListener implements ITestListener{
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub
 		System.out.println(result.getMethod().getMethodName()+" skipped!");
-		test.get().fail(result.getThrowable(),MediaEntityBuilder.createScreenCaptureFromPath(takeScreenshot()).build());
+		//test.get().skip(result.getThrowable(),MediaEntityBuilder.createScreenCaptureFromPath(takeScreenshot()).build());
+		test.get().skip(result.getThrowable(),MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot(),result.getMethod().getMethodName()).build());
 		test.get().getModel().setEndTime(getTime(result.getEndMillis()));
 	}
 
