@@ -48,7 +48,7 @@ pipeline
             steps{
                      publishHTML([allowMissing: false,
                                   alwaysLinkToLastBuild: false, 
-                                  includes: '**/*.html'
+                                  includes: '**/*.html',
                                   keepAll: true, 
                                   reportDir: 'build', 
                                   reportFiles: 'TestExecutionReport.html', 
