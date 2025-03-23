@@ -3,7 +3,7 @@ pipeline
     agent any
     
     tools{
-    	maven 'Maven'
+    	maven 'maven'
         }
 
     stages 
@@ -49,7 +49,6 @@ pipeline
             steps{
                      publishHTML([allowMissing: false,
                                   alwaysLinkToLastBuild: false, 
-                                  includes: '**/*.html',
                                   keepAll: true, 
                                   reportDir: 'build', 
                                   reportFiles: 'TestExecutionReport.html', 
